@@ -7,24 +7,27 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.slider');
     var instances = M.Slider.init(elems);
 
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+
   });
 
-  function sliderPrev(){
+  // function sliderPrev(){
 
-    var elems = document.querySelectorAll('.slider');
-    var instances = M.Slider.init(elems);
-    instances.pause();
-    instances.prev();
+  //   var elems = document.querySelectorAll('.slider');
+  //   var instances = M.Slider.init(elems);
+  //   instances.pause();
+  //   instances.prev();
   
 
-  }
+  // }
  
 
-  function sliderNext(){
+  // function sliderNext(){
 
-    var elems = document.querySelectorAll('.slider');
-    var instances = M.Slider.init(elems);
-    instances.pause();
-    instances.next();
+  //   var elems = document.querySelectorAll('.slider');
+  //   var instances = M.Slider.init(elems);
+  //   instances.pause();
+  //   instances.next();
 
-  }
+  // }

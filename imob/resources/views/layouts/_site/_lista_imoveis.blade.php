@@ -2,6 +2,8 @@
 <div class="row section">
     <h3 style="text-align:center;">Imóveis</h3>
     <div class="divider"></div>
+    <br>
+    @include('layouts._site._filtros')
 </div>
 
 
