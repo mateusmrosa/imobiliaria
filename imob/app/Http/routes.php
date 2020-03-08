@@ -31,8 +31,24 @@ Route::get('/imovel/{id}/{titulo?}', ['as' => 'site.imovel', function(){
     return view('site.imovel');
 }]);
 
+Route::get('/admin/login', ['as' => 'admin.login', function(){
+    return view('admin.login.index');
+}]);
+
+Route::post('/admin/login', ['as' => 'admin.login', 
+    'uses' => 'UsuarioController@login']);
+
+// Route::auth();
+
+//inicio do grupo para proteger as rotas, precisa estar logado para acessar
+Route::group(['middleware' => 'auth'], function(){
+
+    Route::get('/admin', ['as' => 'admin.principal', function(){
+        return view('admin.principal.index');
+
+    }]);
+
+});
+//fim grupo de rotas
 
 
-Route::auth();
-
-Route::get('/home', 'HomeController@index');

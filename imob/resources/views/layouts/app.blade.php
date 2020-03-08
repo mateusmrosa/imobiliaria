@@ -13,33 +13,28 @@
 
 </head>
 <body id="app-layout">
-    
-  <nav>
-    <div class="nav-wrapper blue">
-      <div class="container">
-        <a href="#!" class="brand-logo">Logo</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">Javascript</a></li>
-          <li><a href="mobile.html">Mobile</a></li>
-        </ul>
 
-        <ul class="sidenav" id="mobile-demo">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">Javascript</a></li>
-          <li><a href="mobile.html">Mobile</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  @include('layouts._admin._nav')
 
-  
+  <main>
 
+    @if(Session::has('mensagem'))
+        <div class="container">
+          <div class="row">
+            <div class="card {{ Session::get('mensagem')['class'] }}">
+              <div style="text-align:ceter;" class="card-content">
+                {{ Session::get('mensagem')['msg'] }}
+              </div>
+            </div>
+          </div>
+        </div>
+    @endif
 
     @yield('content')
+  </main>
+
+  @include('layouts._site._footer')
+    
     
 <script src="{{asset('lib/bower_components/materialize/dist/js/materialize.js')}}"></script>
 <script src="{{asset('js/init.js')}}"></script>
